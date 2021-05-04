@@ -1,0 +1,18 @@
+import os
+import time
+
+os.system("gnome-terminal -e 'bash -c \"wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb; sleep 120\" '")
+time.sleep(60)
+os.system("gnome-terminal -e 'bash -c \"sudo dpkg -i packages-microsoft-prod.deb; sleep 120\" '")
+time.sleep(60)
+os.system("gnome-terminal -e 'bash -c \"sudo apt-get update; \
+  sudo apt-get install -y apt-transport-https && \
+  sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-5.0; sleep 120\" '")
+time.sleep(60)
+os.system("gnome-terminal -e 'bash -c \"sudo apt-get update; \
+  sudo apt-get install -y apt-transport-https && \
+  sudo apt-get update && \
+  sudo apt-get install -y aspnetcore-runtime-5.0; sleep 120\" '")
+time.sleep(60)
+os.system("gnome-terminal -e 'bash -c \"sudo apt-get install -y dotnet-runtime-5.0; sleep 120\" '")
